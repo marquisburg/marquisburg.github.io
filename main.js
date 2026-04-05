@@ -1003,6 +1003,18 @@
   /* ═══════════════════════════════════════════
      NAV ANCHOR SCROLLING (fixed)
      ═══════════════════════════════════════════ */
+  function getHeaderOffset() {
+    if (!header) return -80;
+    return -(header.getBoundingClientRect().height + 14);
+  }
+
+  function scrollToElementWithOffset(el) {
+    if (!el) return;
+    var top =
+      el.getBoundingClientRect().top + window.pageYOffset + getHeaderOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
       var href = anchor.getAttribute("href");
@@ -1040,9 +1052,15 @@
       } else {
         /* Normal vertical target (hero, contact) */
         if (lenis) {
-          lenis.scrollTo(target, { offset: -80, duration: 2, easing: function(t) { return 1 - Math.pow(1 - t, 4); } });
+          lenis.scrollTo(target, {
+            offset: getHeaderOffset(),
+            duration: 2,
+            easing: function (t) {
+              return 1 - Math.pow(1 - t, 4);
+            },
+          });
         } else {
-          target.scrollIntoView({ behavior: "smooth" });
+          scrollToElementWithOffset(target);
         }
       }
     });
