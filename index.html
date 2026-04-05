@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Marquis, Head of Development on Empire Roleplay (15M+ visits on Roblox). Luau, Python, C. Built Methlang, a compiled systems language."
+    />
+    <meta name="theme-color" content="#0a0a0c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marquis - Game Developer" />
+    <meta
+      property="og:description"
+      content="Head of Dev on Empire Roleplay (15M+ visits, 28K community). Built Methlang, a compiled systems language in C."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Marquis - Game Developer" />
+    <title>Marquis - Game Developer</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="bg-grain" aria-hidden="true"></div>
+    <canvas class="bg-stars" id="bg-stars" aria-hidden="true"></canvas>
+    <div class="bg-glow bg-glow--hero" aria-hidden="true"></div>
+
+    <header class="site-header" id="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="#hero">Marquis</a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+
+      <!-- HERO: vertical, full viewport, entrance animation -->
+      <section class="hero panel-hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero__ambient" aria-hidden="true">
+          <span class="hero__orb hero__orb--1"></span>
+          <span class="hero__orb hero__orb--2"></span>
+          <span class="hero__orb hero__orb--3"></span>
+        </div>
+        <div class="hero__inner">
+          <h1 id="hero-title" class="hero__title">
+            <span class="hero__title-top">I build things</span>
+            <span class="hero__title-bottom">and ride hard.</span>
+          </h1>
+          <div class="hero__body">
+            <p class="hero__subtitle">
+              Developer and SAWMGA rider from South Africa.
+              Head of Development on <strong>Empire Roleplay</strong>, a Roblox game
+              with 15.5M+ visits and a 28K-member Discord community.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#projects">See the projects</a>
+              <a class="btn btn--ghost" href="#contact">Contact me</a>
+            </div>
+          </div>
+          <div class="hero__stats" aria-label="Key numbers">
+            <div class="hero__stat">
+              <span class="hero__stat-num">15.5M+</span>
+              <span class="hero__stat-label">Game Visits</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-num">28K</span>
+              <span class="hero__stat-label">Community</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-num">Head</span>
+              <span class="hero__stat-label">of Development</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__scroll-hint" aria-hidden="true">
+          <span>Scroll</span>
+          <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="2" x2="8" y2="18"/><polyline points="3 13 8 18 13 13"/></svg>
+        </div>
+      </section>
+
+      <!-- HORIZONTAL SCROLL CONTAINER -->
+      <section class="hscroll" id="hscroll" aria-label="Horizontal scroll showcase">
+        <div class="hscroll__sticky">
+        <div class="hscroll__track">
+
+          <!-- Panel: About -->
+          <div class="hscroll__panel panel-about" id="about">
+            <div class="panel__glow" aria-hidden="true"></div>
+            <div class="panel__inner">
+              <div class="panel__text">
+                <span class="panel__label">Who I am</span>
+                <h2 class="panel__heading">Beyond the code.</h2>
+                <p class="panel__body">
+                  I'm from South Africa, and when I'm not writing code I'm in the
+                  arena. I ride with <strong>SAWMGA</strong> (South African Western
+                  Mounted Games Association), competing in the full gymkhana
+                  slate&mdash;barrel racing, pole bending, keyhole, flag race, and
+                  everything in between.
+                </p>
+                <p class="panel__body">
+                  My horse is <strong>Wallace</strong>, a Boerperd&ndash;Clydesdale
+                  mix. Same energy I bring to building software&mdash;show up, push
+                  hard, get it done.
+                </p>
+              </div>
+              <div class="panel__media">
+                <div class="about-img-wrap">
+                  <img
+                    class="about-img"
+                    src="assets/horseriding1.jpeg"
+                    alt="Marquis riding Wallace at a SAWMGA gymkhana event"
+                    width="640"
+                    height="480"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel: Work -->
+          <div class="hscroll__panel panel-work" id="work">
+            <div class="panel__glow" aria-hidden="true"></div>
+            <div class="panel__inner panel__inner--full">
+              <span class="panel__label">What I do</span>
+              <h2 class="panel__heading">Full-stack game dev.</h2>
+              <p class="panel__body panel__body--lead">
+                I lead a dev team and own the full backend: game systems, the API that
+                feeds them data, the database behind it, and a Discord bot that 28,000
+                people use daily.
+              </p>
+              <div class="work-grid">
+                <article class="work-card work-card--featured">
+                  <div class="work-card__accent" aria-hidden="true"></div>
+                  <div class="work-card__icon">
+                    <img src="assets/icon-lua.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                  </div>
+                  <h3 class="work-card__title">Luau</h3>
+                  <p class="work-card__desc">
+                    My primary language. Gameplay systems, UI, networking, server logic.
+                    This is what I write most of the day leading dev on Empire Roleplay.
+                  </p>
+                  <span class="work-card__tag">Primary</span>
+                </article>
+                <article class="work-card">
+                  <div class="work-card__accent" aria-hidden="true"></div>
+                  <div class="work-card__icon">
+                    <img src="assets/icon-python.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                  </div>
+                  <h3 class="work-card__title">Python</h3>
+                  <p class="work-card__desc">
+                    Database backend, REST API bridging SQL to the game, Discord bot,
+                    build automation.
+                  </p>
+                </article>
+                <article class="work-card">
+                  <div class="work-card__accent" aria-hidden="true"></div>
+                  <div class="work-card__icon">
+                    <img src="assets/icon-c.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                  </div>
+                  <h3 class="work-card__title">C</h3>
+                  <p class="work-card__desc">
+                    Systems and compiler work. Methlang is a compiled language with its
+                    own x86-64 codegen and PE linker, written entirely in C.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel: Empire Roleplay -->
+          <div class="hscroll__panel panel-empire" id="projects">
+            <div class="panel__glow" aria-hidden="true"></div>
+            <div class="panel-empire__bg">
+              <img
+                class="panel-empire__bg-img"
+                src="assets/empireroleplay.webp"
+                alt=""
+                width="760"
+                height="320"
+                decoding="async"
+              />
+              <div class="panel-empire__bg-overlay"></div>
+            </div>
+            <div class="panel__inner panel__inner--center">
+              <span class="panel__label">
+                <span class="project__badge-dot"></span>
+                Live Project
+              </span>
+              <h2 class="panel__heading panel__heading--xl">Empire Roleplay</h2>
+              <p class="panel__body panel__body--center">
+                Large-scale Roblox roleplay game. I lead development as Head of Dev,
+                owning the backend architecture, database, API service connecting SQL
+                to the game, and a Discord bot serving 28K members.
+              </p>
+              <div class="panel-empire__stats">
+                <div class="panel-empire__stat">
+                  <span class="panel-empire__stat-num">15.5M+</span>
+                  <span class="panel-empire__stat-label">Visits</span>
+                </div>
+                <div class="panel-empire__stat">
+                  <span class="panel-empire__stat-num">50-100</span>
+                  <span class="panel-empire__stat-label">Peak CCU</span>
+                </div>
+                <div class="panel-empire__stat">
+                  <span class="panel-empire__stat-num">28K</span>
+                  <span class="panel-empire__stat-label">Discord</span>
+                </div>
+              </div>
+              <div class="panel-empire__tech">
+                <span>Luau</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>REST API</span>
+                <span>Discord.py</span>
+              </div>
+              <div class="panel-empire__links">
+                <a class="btn btn--primary" href="https://www.roblox.com/games/4866011667/Empire-Roleplay" target="_blank" rel="noopener noreferrer">
+                  Play on Roblox
+                  <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+                <a class="btn btn--ghost" href="https://discord.gg/hre" target="_blank" rel="noopener noreferrer">
+                  Join Discord
+                  <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel: Methlang -->
+          <div class="hscroll__panel panel-methlang">
+            <div class="panel__glow" aria-hidden="true"></div>
+            <div class="panel__inner panel__inner--center">
+              <span class="panel__label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                Open Source
+              </span>
+              <h2 class="panel__heading panel__heading--xl">Methlang</h2>
+              <p class="panel__body panel__body--center">
+                A compiled, statically typed systems language I built in C, used in
+                production. Parts of Empire Roleplay's backend run on it. Compiles
+                <code>.meth</code> to x86-64 with an internal PE linker, no external
+                toolchain needed. Pointers, structs, enums, generics, defer, a GC,
+                C interop, and a standard library.
+              </p>
+              <div class="panel-empire__tech">
+                <span>C</span>
+                <span>x86-64</span>
+                <span>NASM</span>
+                <span>Compilers</span>
+                <span>PE Linking</span>
+              </div>
+              <div class="panel-empire__links">
+                <a class="btn btn--primary" href="https://github.com/marquisburg/Methlang" target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                  <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </div>
+      </section>
+
+      <!-- CONTACT: returns to vertical -->
+      <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+        <div class="section__inner section__inner--narrow">
+          <h2 id="contact-title" class="section__heading section__heading--center">
+            <span class="section__heading-label">Contact</span>
+            Get in touch.
+          </h2>
+          <div class="contact__card">
+            <p class="contact__handle" translate="no">@marqsailer</p>
+            <p class="contact__note">Add me on Discord</p>
+            <div class="contact__actions">
+              <button type="button" class="btn btn--ghost contact__copy" id="copy-discord" aria-label="Copy Discord username">
+                Copy username
+              </button>
+              <a
+                class="btn btn--primary"
+                href="https://discord.com/app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open Discord
+                <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+            <p class="contact__toast" id="copy-toast" role="status" aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span class="site-footer__copy">&copy; <span id="year"></span> Marquis</span>
+      </div>
+    </footer>
+
+    <div class="hscroll-progress" aria-hidden="true"></div>
+
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
