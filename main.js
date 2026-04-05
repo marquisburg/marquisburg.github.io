@@ -251,6 +251,7 @@
 
     var topWords = splitTextIntoWords(titleTop);
     var bottomWords = splitTextIntoWords(titleBottom);
+    var allWords = topWords.concat(bottomWords);
     var proofItems = document.querySelectorAll(".hero__proof-item");
     var storyCard = document.querySelector(".hero__card--story");
     var storyItems = Array.prototype.slice.call(
@@ -259,6 +260,19 @@
     var storyMetrics = Array.prototype.slice.call(
       document.querySelectorAll(".hero__story-metric")
     );
+
+    /* Safety net: if animation doesn't complete within 3s, force everything visible.
+       Covers bfcache, CDN lag, and any GSAP timing edge cases. */
+    var safetyTimer = setTimeout(function () {
+      gsap.set(allWords, { y: 0, rotateX: 0, clearProps: "all" });
+      gsap.set(
+        [".hero__eyebrow", ".hero__subtitle", ".hero__actions", ".hero__scroll-hint"],
+        { opacity: 1, y: 0, clearProps: "all" }
+      );
+      gsap.set(proofItems, { opacity: 1, y: 0, scale: 1, clearProps: "all" });
+      if (storyCard) gsap.set(storyCard, { opacity: 1, y: 0, x: 0, clearProps: "all" });
+      gsap.set(storyItems.concat(storyMetrics), { opacity: 1, y: 0, clearProps: "all" });
+    }, 3000);
 
     /* Hide everything initially */
     gsap.set(
@@ -277,6 +291,7 @@
     var tl = gsap.timeline({
       defaults: { ease: "power4.out" },
       delay: 0.12,
+      onComplete: function () { clearTimeout(safetyTimer); },
     });
 
     tl.to(".hero__eyebrow", {
@@ -1167,6 +1182,16 @@
         }
       }
     });
+  });
+
+  /* ─── bfcache: force split-word elements visible on back/forward nav ─── */
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted) {
+      document.querySelectorAll(".split-word, .split-char").forEach(function (el) {
+        el.style.transform = "none";
+        el.style.opacity = "1";
+      });
+    }
   });
 
   /* ─── Resize handler ─── */
