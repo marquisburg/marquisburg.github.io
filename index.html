@@ -69,7 +69,8 @@
                 <p class="hero__subtitle">
                   I lead development on <strong>Empire Roleplay</strong>, handling the
                   game systems, backend, and tooling behind a live Roblox world with
-                  15.5M+ visits. When I log off, I'm in the arena competing with
+                  15.5M+ visits, including a combat AI system I'd put among the most
+                  advanced on Roblox. When I log off, I'm in the arena competing with
                   Wallace in SAWMGA events.
                 </p>
                 <div class="hero__proof" aria-label="Selected highlights">
@@ -96,8 +97,8 @@
                   <div class="hero__story-item">
                     <span class="hero__story-kicker">Empire Roleplay</span>
                     <p>
-                      Head of Development for a live Roblox game with 15.5M+ visits
-                      and a 28K-member Discord community.
+                      Head of Development for a live Roblox game with 15.5M+ visits,
+                      a 28K-member Discord community, and a standout combat AI system.
                     </p>
                   </div>
                   <div class="hero__story-item">
@@ -145,91 +146,89 @@
             <div class="panel__inner panel__inner--full work-layout">
               <div class="work-header">
                 <span class="panel__label">What I do</span>
-                <h2 class="panel__heading">Full-stack game dev.</h2>
+                <h2 class="panel__heading">I cover the systems that make a live Roblox game hold together.</h2>
                 <p class="panel__body panel__body--lead">
-                  I lead a dev team and own the full stack: game systems, API, database,
-                  and a Discord bot that 28,000 people use daily.
+                  I like owning the full loop: the systems players feel first,
+                  the multiplayer rules underneath them, and the backend and
+                  tools that keep the whole thing running.
                 </p>
               </div>
 
-              <div class="work-bento">
-                <!-- Primary: Luau (large card) -->
-                <article class="work-card work-card--luau">
-                  <div class="work-card__accent" aria-hidden="true"></div>
-                  <div class="work-card__top">
-                    <div class="work-card__icon">
-                      <img src="assets/icon-lua.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
-                    </div>
-                    <span class="work-card__tag">Primary</span>
-                  </div>
-                  <h3 class="work-card__title">Luau</h3>
-                  <p class="work-card__desc">
-                    Gameplay systems, UI frameworks, networking, and server logic.
-                    This is what I write most of the day leading dev on Empire Roleplay.
+              <div class="work-stage">
+                <article class="work-orbit">
+                  <span class="work-orbit__eyebrow">Coverage</span>
+                  <h3 class="work-orbit__title">Systems I own day to day.</h3>
+                  <p class="work-orbit__copy">
+                    I do my best work when the boundaries disappear and the whole
+                    thing becomes one design problem.
                   </p>
-                  <ul class="work-card__list">
-                    <li>Game state machines &amp; entity systems</li>
-                    <li>Client-server networking &amp; replication</li>
-                    <li>Custom UI framework &amp; animation</li>
-                    <li>Anti-exploit &amp; server validation</li>
-                  </ul>
+                  <div class="work-orbit__cloud" aria-label="System coverage">
+                    <span class="work-orbit__pill work-orbit__pill--core">Combat AI</span>
+                    <span class="work-orbit__pill">Economy</span>
+                    <span class="work-orbit__pill">Backend</span>
+                    <span class="work-orbit__pill">Databases</span>
+                    <span class="work-orbit__pill">Tooling</span>
+                    <span class="work-orbit__pill">Anti-exploit</span>
+                  </div>
                 </article>
 
-                <!-- Python -->
-                <article class="work-card work-card--python">
-                  <div class="work-card__accent" aria-hidden="true"></div>
-                  <div class="work-card__top">
-                    <div class="work-card__icon">
-                      <img src="assets/icon-python.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
-                    </div>
-                  </div>
-                  <h3 class="work-card__title">Python</h3>
-                  <p class="work-card__desc">
-                    REST APIs, the Discord bot, and the tooling that keeps the
-                    project moving.
-                  </p>
-                  <ul class="work-card__list">
-                    <li>REST API (Flask) &rarr; PostgreSQL</li>
-                    <li>Discord.py bot for 28K server</li>
-                    <li>CI/CD &amp; build automation</li>
-                  </ul>
-                </article>
+                <div class="work-grid">
+                  <article class="work-card work-card--combat">
+                    <div class="work-card__accent" aria-hidden="true"></div>
+                    <span class="work-card__kicker">Combat systems</span>
+                    <h3 class="work-card__title">Fights that read well</h3>
+                    <ul class="work-card__list">
+                      <li>NPC behavior and target selection</li>
+                      <li>Pressure, reaction, and pacing</li>
+                      <li>Server-side combat rules</li>
+                    </ul>
+                  </article>
 
-                <!-- C -->
-                <article class="work-card work-card--c">
-                  <div class="work-card__accent" aria-hidden="true"></div>
-                  <div class="work-card__top">
-                    <div class="work-card__icon">
-                      <img src="assets/icon-c.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
-                    </div>
-                  </div>
-                  <h3 class="work-card__title">C</h3>
-                  <p class="work-card__desc">
-                    Low-level systems and compiler work. I built Methlang from the
-                    lexer through x86-64 codegen and PE linking.
-                  </p>
-                  <ul class="work-card__list">
-                    <li>Compiler frontend &amp; backend</li>
-                    <li>x86-64 code generation</li>
-                    <li>PE executable linking</li>
-                  </ul>
-                </article>
+                  <article class="work-card work-card--economy">
+                    <div class="work-card__accent" aria-hidden="true"></div>
+                    <span class="work-card__kicker">Economy systems</span>
+                    <h3 class="work-card__title">Value has to hold up</h3>
+                    <ul class="work-card__list">
+                      <li>Trading and auction house flow</li>
+                      <li>Item movement, sinks, and progression</li>
+                      <li>Rules that survive real players</li>
+                    </ul>
+                  </article>
 
-                <!-- Stack/tools ribbon -->
-                <div class="work-card work-card--stack">
-                  <div class="work-card__accent" aria-hidden="true"></div>
-                  <h3 class="work-card__title work-card__title--sm">Toolbelt</h3>
-                  <div class="work-stack">
-                    <span>SQL</span>
-                    <span>Git</span>
-                    <span>REST</span>
-                    <span>PostgreSQL</span>
-                    <span>Discord.py</span>
-                    <span>Rojo</span>
-                    <span>NASM</span>
-                    <span>HTML/CSS/JS</span>
-                  </div>
+                  <article class="work-card work-card--network">
+                    <div class="work-card__accent" aria-hidden="true"></div>
+                    <span class="work-card__kicker">Multiplayer systems</span>
+                    <h3 class="work-card__title">Authority stays server-side</h3>
+                    <ul class="work-card__list">
+                      <li>Replication and state ownership</li>
+                      <li>Validation and anti-exploit checks</li>
+                      <li>Game rules that stay fair under load</li>
+                    </ul>
+                  </article>
+
+                  <article class="work-card work-card--backend">
+                    <div class="work-card__accent" aria-hidden="true"></div>
+                    <span class="work-card__kicker">Backend and tools</span>
+                    <h3 class="work-card__title">The layer nobody sees</h3>
+                    <ul class="work-card__list">
+                      <li>APIs, SQL, and Discord workflows</li>
+                      <li>Admin tools and live ops support</li>
+                      <li>Automation that keeps shipping fast</li>
+                    </ul>
+                  </article>
                 </div>
+              </div>
+
+              <div class="work-ribbon" aria-label="Core stack">
+                <span>Luau</span>
+                <span>Python</span>
+                <span>C</span>
+                <span>SQL</span>
+                <span>PostgreSQL</span>
+                <span>REST</span>
+                <span>Discord.py</span>
+                <span>Roblox networking</span>
+                <span>Server validation</span>
               </div>
             </div>
           </div>
@@ -259,7 +258,9 @@
                 <p class="panel__body panel__body--center">
                   A live Roblox roleplay game where I lead development. I own the
                   backend architecture, database, API layer that connects SQL to the
-                  game, and a Discord bot used by 28K members.
+                  game, and a Discord bot used by 28K members. I also built the
+                  combat AI system, which I consider one of the most advanced on
+                  Roblox. I also developed, from the ground up, the entire economy system, including the trading and auction house.
                 </p>
                 <div class="panel-empire__gallery" aria-label="Empire Roleplay screenshots">
                   <figure class="panel-empire__shot">
