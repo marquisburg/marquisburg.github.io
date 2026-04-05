@@ -1161,15 +1161,6 @@ main {
   white-space: nowrap;
 }
 
-/* Responsive: stack on mobile */
-@media (max-width: 900px) {
-  .work-bento {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .work-card--luau { grid-row: auto; }
-  .work-card--stack { grid-column: auto; flex-wrap: wrap; }
-}
 
 
 /* ═════════════════════════════════════════════
@@ -1597,24 +1588,6 @@ main {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .rit-features {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .rit-features {
-    grid-template-columns: 1fr;
-  }
-  .rit-compare {
-    flex-direction: column;
-  }
-  .rit-compare__divider {
-    transform: rotate(90deg);
-  }
-}
 
 
 /* ═════════════════════════════════════════════
@@ -1814,6 +1787,114 @@ main {
 
   .hero__scroll-hint {
     display: none;
+  }
+
+  /* ── Work panel mobile ── */
+  .work-bento {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .work-card--luau {
+    grid-row: auto;
+  }
+
+  .work-card--stack {
+    grid-column: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-header {
+    max-width: none;
+  }
+
+  /* ── RIT panel mobile ── */
+  .rit-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rit-compare {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rit-compare__divider {
+    transform: none;
+  }
+
+  .panel-rit__main {
+    max-width: none;
+  }
+
+  /* ── Empire panel mobile ── */
+  .panel-empire__links {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .panel-empire__links .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Methlang mobile: reduce columns, hide animation ── */
+  .meth-col {
+    animation: none !important;
+  }
+
+  .meth-col--2,
+  .meth-col--4 {
+    display: none;
+  }
+
+  .meth-code {
+    font-size: 0.65rem;
+  }
+
+  /* ── About panel mobile ── */
+  .panel__media {
+    max-width: 100%;
+  }
+
+  .about-video-wrap {
+    max-width: 100%;
+  }
+
+  /* ── General mobile spacing ── */
+  .panel__heading--xl {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .panel-empire__tech {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .rit-cta {
+    width: 100%;
+  }
+
+  .rit-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .rit-features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 

@@ -45,9 +45,10 @@
     var resizeTimer = 0;
 
     function buildStars() {
+      var maxStars = isMobile ? 50 : 130;
       var count = Math.max(
-        36,
-        Math.min(130, Math.floor((width * height) / 13000))
+        isMobile ? 20 : 36,
+        Math.min(maxStars, Math.floor((width * height) / (isMobile ? 20000 : 13000)))
       );
       stars = [];
       for (var i = 0; i < count; i++) {
@@ -64,7 +65,7 @@
     }
 
     function sizeCanvas() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = Math.floor(width * dpr);
@@ -706,6 +707,11 @@
     var videoWrap = document.querySelector(".about-video-wrap");
     var video = document.querySelector(".about-video");
     if (!videoWrap || !video) return;
+
+    /* Defer video loading on mobile until needed */
+    if (isMobile) {
+      video.setAttribute("preload", "none");
+    }
 
     /* Scroll-triggered play/pause: play when visible, pause when not */
     var playTriggerConfig;
