@@ -7,7 +7,7 @@
       name="description"
       content="Marquis, Head of Development on Empire Roleplay (15M+ visits on Roblox). Luau, Python, C. Built Methlang, a compiled systems language."
     />
-    <meta name="theme-color" content="#0a0a0c" />
+    <meta name="theme-color" content="#faf8f4" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Marquis - Game Developer" />
     <meta
@@ -38,9 +38,11 @@
         <a class="site-logo" href="#hero">Marquis</a>
         <nav class="site-nav" aria-label="Primary">
           <ul>
-            <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#rit">RIT</a></li>
+            <li><a href="#methlang">Methlang</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -57,34 +59,71 @@
           <span class="hero__orb hero__orb--3"></span>
         </div>
         <div class="hero__inner">
-          <h1 id="hero-title" class="hero__title">
-            <span class="hero__title-top">I build things</span>
-            <span class="hero__title-bottom">and ride hard.</span>
-          </h1>
-          <div class="hero__body">
-            <p class="hero__subtitle">
-              Developer and SAWMGA rider from South Africa.
-              Head of Development on <strong>Empire Roleplay</strong>, a Roblox game
-              with 15.5M+ visits and a 28K-member Discord community.
-            </p>
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="#projects">See the projects</a>
-              <a class="btn btn--ghost" href="#contact">Contact me</a>
+          <div class="hero__grid">
+            <div class="hero__content">
+              <h1 id="hero-title" class="hero__title">
+                <span class="hero__title-top">I build things</span>
+                <span class="hero__title-bottom">and ride hard.</span>
+              </h1>
+              <div class="hero__body">
+                <p class="hero__subtitle">
+                  I lead development on <strong>Empire Roleplay</strong>, building the
+                  systems, backend, and tooling behind a live Roblox world with 15.5M+
+                  visits. When I log off, I'm in the arena competing with Wallace in
+                  SAWMGA events.
+                </p>
+                <div class="hero__proof" aria-label="Selected highlights">
+                  <span class="hero__proof-item">Empire Roleplay</span>
+                  <span class="hero__proof-item">Methlang</span>
+                  <span class="hero__proof-item">SAWMGA</span>
+                </div>
+                <div class="hero__actions">
+                  <a class="btn btn--primary" href="#projects">See the projects</a>
+                  <a class="btn btn--ghost" href="#contact">Contact me</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="hero__stats" aria-label="Key numbers">
-            <div class="hero__stat">
-              <span class="hero__stat-num">15.5M+</span>
-              <span class="hero__stat-label">Game Visits</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-num">28K</span>
-              <span class="hero__stat-label">Community</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-num">Head</span>
-              <span class="hero__stat-label">of Development</span>
-            </div>
+            <aside class="hero__showcase" aria-label="Hero snapshot">
+              <article class="hero__card hero__card--story">
+                <span class="hero__card-label">What I bring</span>
+                <h2 class="hero__card-title">Live game scale with systems-level discipline.</h2>
+                <p class="hero__card-text">
+                  My work sits where player experience meets infrastructure:
+                  building the things people feel, and the systems that keep them
+                  running.
+                </p>
+                <div class="hero__story-list">
+                  <div class="hero__story-item">
+                    <span class="hero__story-kicker">Empire Roleplay</span>
+                    <p>
+                      Head of Development for a live Roblox game with 15.5M+ visits
+                      and a 28K-member Discord community.
+                    </p>
+                  </div>
+                  <div class="hero__story-item">
+                    <span class="hero__story-kicker">Methlang</span>
+                    <p>
+                      A compiled systems language I built in C and use in
+                      production-facing work.
+                    </p>
+                  </div>
+                </div>
+                <div class="hero__story-metrics" aria-label="Key numbers">
+                  <div class="hero__story-metric">
+                    <strong>15.5M+</strong>
+                    <span>visits</span>
+                  </div>
+                  <div class="hero__story-metric">
+                    <strong>28K</strong>
+                    <span>community</span>
+                  </div>
+                  <div class="hero__story-metric">
+                    <strong>Head</strong>
+                    <span>of development</span>
+                  </div>
+                </div>
+              </article>
+            </aside>
           </div>
         </div>
         <div class="hero__scroll-hint" aria-hidden="true">
@@ -98,87 +137,99 @@
         <div class="hscroll__sticky">
         <div class="hscroll__track">
 
-          <!-- Panel: About -->
-          <div class="hscroll__panel panel-about" id="about">
-            <div class="panel__glow" aria-hidden="true"></div>
-            <div class="panel__inner">
-              <div class="panel__text">
-                <span class="panel__label">Who I am</span>
-                <h2 class="panel__heading">Beyond the code.</h2>
-                <p class="panel__body">
-                  I'm from South Africa, and when I'm not writing code I'm in the
-                  arena. I ride with <strong>SAWMGA</strong> (South African Western
-                  Mounted Games Association), competing in the full gymkhana
-                  slate&mdash;barrel racing, pole bending, keyhole, flag race, and
-                  everything in between.
-                </p>
-                <p class="panel__body">
-                  My horse is <strong>Wallace</strong>, a Boerperd&ndash;Clydesdale
-                  mix. Same energy I bring to building software&mdash;show up, push
-                  hard, get it done.
-                </p>
-              </div>
-              <div class="panel__media">
-                <div class="about-img-wrap">
-                  <img
-                    class="about-img"
-                    src="assets/horseriding1.jpeg"
-                    alt="Marquis riding Wallace at a SAWMGA gymkhana event"
-                    width="640"
-                    height="480"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Panel: Work -->
           <div class="hscroll__panel panel-work" id="work">
             <div class="panel__glow" aria-hidden="true"></div>
-            <div class="panel__inner panel__inner--full">
-              <span class="panel__label">What I do</span>
-              <h2 class="panel__heading">Full-stack game dev.</h2>
-              <p class="panel__body panel__body--lead">
-                I lead a dev team and own the full backend: game systems, the API that
-                feeds them data, the database behind it, and a Discord bot that 28,000
-                people use daily.
-              </p>
-              <div class="work-grid">
-                <article class="work-card work-card--featured">
+
+
+            <div class="panel__inner panel__inner--full work-layout">
+              <div class="work-header">
+                <span class="panel__label">What I do</span>
+                <h2 class="panel__heading">Full-stack game dev.</h2>
+                <p class="panel__body panel__body--lead">
+                  I lead a dev team and own the full stack: game systems, API, database,
+                  and a Discord bot that 28,000 people use daily.
+                </p>
+              </div>
+
+              <div class="work-bento">
+                <!-- Primary: Luau (large card) -->
+                <article class="work-card work-card--luau">
                   <div class="work-card__accent" aria-hidden="true"></div>
-                  <div class="work-card__icon">
-                    <img src="assets/icon-lua.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                  <div class="work-card__top">
+                    <div class="work-card__icon">
+                      <img src="assets/icon-lua.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                    </div>
+                    <span class="work-card__tag">Primary</span>
                   </div>
                   <h3 class="work-card__title">Luau</h3>
                   <p class="work-card__desc">
-                    My primary language. Gameplay systems, UI, networking, server logic.
+                    Gameplay systems, UI frameworks, networking, and server logic.
                     This is what I write most of the day leading dev on Empire Roleplay.
                   </p>
-                  <span class="work-card__tag">Primary</span>
+                  <ul class="work-card__list">
+                    <li>Game state machines &amp; entity systems</li>
+                    <li>Client-server networking &amp; replication</li>
+                    <li>Custom UI framework &amp; animation</li>
+                    <li>Anti-exploit &amp; server validation</li>
+                  </ul>
                 </article>
-                <article class="work-card">
+
+                <!-- Python -->
+                <article class="work-card work-card--python">
                   <div class="work-card__accent" aria-hidden="true"></div>
-                  <div class="work-card__icon">
-                    <img src="assets/icon-python.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                  <div class="work-card__top">
+                    <div class="work-card__icon">
+                      <img src="assets/icon-python.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                    </div>
                   </div>
                   <h3 class="work-card__title">Python</h3>
                   <p class="work-card__desc">
-                    Database backend, REST API bridging SQL to the game, Discord bot,
-                    build automation.
+                    The glue between everything. REST API bridging SQL to the game,
+                    Discord bot, and build tooling.
                   </p>
+                  <ul class="work-card__list">
+                    <li>REST API (Flask) &rarr; PostgreSQL</li>
+                    <li>Discord.py bot for 28K server</li>
+                    <li>CI/CD &amp; build automation</li>
+                  </ul>
                 </article>
-                <article class="work-card">
+
+                <!-- C -->
+                <article class="work-card work-card--c">
                   <div class="work-card__accent" aria-hidden="true"></div>
-                  <div class="work-card__icon">
-                    <img src="assets/icon-c.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                  <div class="work-card__top">
+                    <div class="work-card__icon">
+                      <img src="assets/icon-c.svg" width="28" height="28" alt="" decoding="async" loading="lazy" />
+                    </div>
                   </div>
                   <h3 class="work-card__title">C</h3>
                   <p class="work-card__desc">
-                    Systems and compiler work. Methlang is a compiled language with its
-                    own x86-64 codegen and PE linker, written entirely in C.
+                    Low-level systems and compiler work. Built Methlang from scratch&mdash;lexer
+                    to x86-64 codegen to PE linker.
                   </p>
+                  <ul class="work-card__list">
+                    <li>Compiler frontend &amp; backend</li>
+                    <li>x86-64 code generation</li>
+                    <li>PE executable linking</li>
+                  </ul>
                 </article>
+
+                <!-- Stack/tools ribbon -->
+                <div class="work-card work-card--stack">
+                  <div class="work-card__accent" aria-hidden="true"></div>
+                  <h3 class="work-card__title work-card__title--sm">Toolbelt</h3>
+                  <div class="work-stack">
+                    <span>SQL</span>
+                    <span>Git</span>
+                    <span>REST</span>
+                    <span>PostgreSQL</span>
+                    <span>Discord.py</span>
+                    <span>Rojo</span>
+                    <span>NASM</span>
+                    <span>HTML/CSS/JS</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -198,36 +249,60 @@
               <div class="panel-empire__bg-overlay"></div>
             </div>
             <div class="panel__inner panel__inner--center">
-              <span class="panel__label">
-                <span class="project__badge-dot"></span>
-                Live Project
-              </span>
-              <h2 class="panel__heading panel__heading--xl">Empire Roleplay</h2>
-              <p class="panel__body panel__body--center">
-                Large-scale Roblox roleplay game. I lead development as Head of Dev,
-                owning the backend architecture, database, API service connecting SQL
-                to the game, and a Discord bot serving 28K members.
-              </p>
-              <div class="panel-empire__stats">
-                <div class="panel-empire__stat">
-                  <span class="panel-empire__stat-num">15.5M+</span>
-                  <span class="panel-empire__stat-label">Visits</span>
+              <div class="panel-empire__main">
+                <span class="panel__label">
+                  <span class="project__badge-dot"></span>
+                  Live Project
+                </span>
+                <h2 class="panel__heading panel__heading--xl">Empire Roleplay</h2>
+                <p class="panel__body panel__body--center">
+                  Large-scale Roblox roleplay game. I lead development as Head of Dev,
+                  owning the backend architecture, database, API service connecting SQL
+                  to the game, and a Discord bot serving 28K members.
+                </p>
+                <div class="panel-empire__gallery" aria-label="Empire Roleplay screenshots">
+                  <figure class="panel-empire__shot">
+                    <img
+                      src="assets/empireroleplay2.jpg"
+                      alt="Empire Roleplay: in-game street and environment"
+                      width="800"
+                      height="450"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <figure class="panel-empire__shot">
+                    <img
+                      src="assets/empireroleplay3.png"
+                      alt="Empire Roleplay: gameplay scene"
+                      width="800"
+                      height="450"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
                 </div>
-                <div class="panel-empire__stat">
-                  <span class="panel-empire__stat-num">50-100</span>
-                  <span class="panel-empire__stat-label">Peak CCU</span>
+                <div class="panel-empire__stats">
+                  <div class="panel-empire__stat">
+                    <span class="panel-empire__stat-num">15.5M+</span>
+                    <span class="panel-empire__stat-label">Visits</span>
+                  </div>
+                  <div class="panel-empire__stat">
+                    <span class="panel-empire__stat-num">50-100</span>
+                    <span class="panel-empire__stat-label">Peak CCU</span>
+                  </div>
+                  <div class="panel-empire__stat">
+                    <span class="panel-empire__stat-num">28K</span>
+                    <span class="panel-empire__stat-label">Discord</span>
+                  </div>
                 </div>
-                <div class="panel-empire__stat">
-                  <span class="panel-empire__stat-num">28K</span>
-                  <span class="panel-empire__stat-label">Discord</span>
+                <div class="panel-empire__tech">
+                  <span>Luau</span>
+                  <span>Python</span>
+                  <span>SQL</span>
+                  <span>REST API</span>
+                  <span>Discord.py</span>
                 </div>
-              </div>
-              <div class="panel-empire__tech">
-                <span>Luau</span>
-                <span>Python</span>
-                <span>SQL</span>
-                <span>REST API</span>
-                <span>Discord.py</span>
               </div>
               <div class="panel-empire__links">
                 <a class="btn btn--primary" href="https://www.roblox.com/games/4866011667/Empire-Roleplay" target="_blank" rel="noopener noreferrer">
@@ -242,9 +317,437 @@
             </div>
           </div>
 
-          <!-- Panel: Methlang -->
-          <div class="hscroll__panel panel-methlang">
+          <!-- Panel: RIT -->
+          <div class="hscroll__panel panel-rit" id="rit">
             <div class="panel__glow" aria-hidden="true"></div>
+            <div class="panel__inner panel__inner--center">
+              <div class="panel-rit__main">
+                <span class="panel__label">
+                  <span class="project__badge-dot project__badge-dot--wip"></span>
+                  Proprietary
+                </span>
+                <h2 class="panel__heading panel__heading--xl">RIT</h2>
+                <p class="panel__body panel__body--center">
+                  A full development workflow platform for Roblox. Version control,
+                  two-way sync, team analytics, and task tracking&mdash;built for how
+                  Roblox development actually works, not awkwardly adapted from tools
+                  that weren't designed for it.
+                </p>
+
+                <div class="rit-features">
+                  <div class="rit-feature">
+                    <div class="rit-feature__icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="1.05" y1="12" x2="7" y2="12"/><line x1="17.01" y1="12" x2="22.96" y2="12"/></svg>
+                    </div>
+                    <h3 class="rit-feature__title">Version Control</h3>
+                    <p class="rit-feature__desc">Commits, branches, history, and diffs&mdash;designed for Roblox assets, not just code files.</p>
+                  </div>
+                  <div class="rit-feature">
+                    <div class="rit-feature__icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                    </div>
+                    <h3 class="rit-feature__title">Two-Way Sync</h3>
+                    <p class="rit-feature__desc">Local files and Roblox stay in sync. Handles publishing, asset versions, and conflicts without nuking work.</p>
+                  </div>
+                  <div class="rit-feature">
+                    <div class="rit-feature__icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <h3 class="rit-feature__title">Project Intelligence</h3>
+                    <p class="rit-feature__desc">Dev velocity, code impact, most modified files, work patterns. Real visibility, not guesswork.</p>
+                  </div>
+                  <div class="rit-feature">
+                    <div class="rit-feature__icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="rit-feature__title">Team Awareness</h3>
+                    <p class="rit-feature__desc">Who's working, what they touched, when things changed. Live activity feed. No more &ldquo;who edited this?&rdquo;</p>
+                  </div>
+                  <div class="rit-feature">
+                    <div class="rit-feature__icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="rit-feature__title">Workflow Layer</h3>
+                    <p class="rit-feature__desc">Task system tied directly to code changes. Not a disconnected board nobody updates.</p>
+                  </div>
+                  <div class="rit-feature rit-feature--planned">
+                    <div class="rit-feature__icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><line x1="10" y1="18" x2="14" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+                    </div>
+                    <h3 class="rit-feature__title">AI Layer</h3>
+                    <p class="rit-feature__desc">Bug detection, affected file suggestions, and issues linked to code. <em>Planned.</em></p>
+                  </div>
+                </div>
+
+                <div class="rit-compare">
+                  <div class="rit-compare__item rit-compare__item--other">
+                    <span class="rit-compare__label">Rojo</span>
+                    <p>Syncs code.</p>
+                  </div>
+                  <div class="rit-compare__divider">vs</div>
+                  <div class="rit-compare__item rit-compare__item--rit">
+                    <span class="rit-compare__label">RIT</span>
+                    <p>Manages your entire development process.</p>
+                  </div>
+                </div>
+
+                <div class="panel-empire__tech">
+                  <span>Roblox</span>
+                  <span>Version Control</span>
+                  <span>Analytics</span>
+                  <span>Team Sync</span>
+                  <span>Task Management</span>
+                </div>
+
+                <div class="rit-cta">
+                  <a class="btn btn--ghost" href="#contact">
+                    Interested? Get in touch
+                    <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel: Methlang -->
+          <div class="hscroll__panel panel-methlang" id="methlang">
+            <div class="panel__glow" aria-hidden="true"></div>
+            <div class="panel-methlang__bg" aria-hidden="true">
+
+              <!-- Column 1: Lexer (scrolls up, slow) -->
+              <div class="meth-col meth-col--1">
+<pre class="meth-code"><span class="meth-kw">import</span> <span class="meth-str">"std/io"</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/mem"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">Token</span> {
+    kind: <span class="meth-type">TokenKind</span>,
+    lexeme: <span class="meth-type">^char</span>,
+    length: <span class="meth-type">i32</span>,
+    line: <span class="meth-type">i32</span>,
+}
+
+<span class="meth-kw">enum</span> <span class="meth-type">TokenKind</span> {
+    TK_IDENT,
+    TK_NUMBER,
+    TK_STRING,
+    TK_LPAREN,
+    TK_RPAREN,
+    TK_LBRACE,
+    TK_RBRACE,
+    TK_SEMI,
+    TK_EOF,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">scan</span>(src: <span class="meth-type">^char</span>, len: <span class="meth-type">i32</span>) -> <span class="meth-type">^Token</span> {
+    <span class="meth-kw">let</span> tokens = mem::alloc(<span class="meth-type">Token</span>, len)
+    <span class="meth-kw">let</span> pos: <span class="meth-type">i32</span> = <span class="meth-num">0</span>
+    <span class="meth-kw">let</span> line: <span class="meth-type">i32</span> = <span class="meth-num">1</span>
+
+    <span class="meth-kw">while</span> pos < len {
+        <span class="meth-kw">let</span> ch = src[pos]
+        <span class="meth-kw">if</span> ch == <span class="meth-str">'\n'</span> {
+            line = line + <span class="meth-num">1</span>
+            pos = pos + <span class="meth-num">1</span>
+            <span class="meth-kw">continue</span>
+        }
+        <span class="meth-kw">if</span> is_alpha(ch) {
+            <span class="meth-kw">let</span> start = pos
+            <span class="meth-kw">while</span> pos < len <span class="meth-kw">and</span> is_alnum(src[pos]) {
+                pos = pos + <span class="meth-num">1</span>
+            }
+            emit(tokens, TK_IDENT, src + start, pos - start, line)
+        }
+    }
+    <span class="meth-kw">return</span> tokens
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit</span>(buf: <span class="meth-type">^Token</span>, kind: <span class="meth-type">TokenKind</span>,
+        lex: <span class="meth-type">^char</span>, len: <span class="meth-type">i32</span>, line: <span class="meth-type">i32</span>) {
+    buf.kind   = kind
+    buf.lexeme = lex
+    buf.length = len
+    buf.line   = line
+}</pre>
+<pre class="meth-code"><span class="meth-kw">import</span> <span class="meth-str">"std/io"</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/mem"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">Token</span> {
+    kind: <span class="meth-type">TokenKind</span>,
+    lexeme: <span class="meth-type">^char</span>,
+    length: <span class="meth-type">i32</span>,
+    line: <span class="meth-type">i32</span>,
+}
+
+<span class="meth-kw">enum</span> <span class="meth-type">TokenKind</span> {
+    TK_IDENT,
+    TK_NUMBER,
+    TK_STRING,
+    TK_LPAREN,
+    TK_RPAREN,
+    TK_LBRACE,
+    TK_RBRACE,
+    TK_SEMI,
+    TK_EOF,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">scan</span>(src: <span class="meth-type">^char</span>, len: <span class="meth-type">i32</span>) -> <span class="meth-type">^Token</span> {
+    <span class="meth-kw">let</span> tokens = mem::alloc(<span class="meth-type">Token</span>, len)
+    <span class="meth-kw">let</span> pos: <span class="meth-type">i32</span> = <span class="meth-num">0</span>
+    <span class="meth-kw">let</span> line: <span class="meth-type">i32</span> = <span class="meth-num">1</span>
+
+    <span class="meth-kw">while</span> pos < len {
+        <span class="meth-kw">let</span> ch = src[pos]
+        <span class="meth-kw">if</span> ch == <span class="meth-str">'\n'</span> {
+            line = line + <span class="meth-num">1</span>
+            pos = pos + <span class="meth-num">1</span>
+            <span class="meth-kw">continue</span>
+        }
+    }
+    <span class="meth-kw">return</span> tokens
+}</pre>
+              </div>
+
+              <!-- Column 2: Codegen (scrolls down, medium) -->
+              <div class="meth-col meth-col--2">
+<pre class="meth-code"><span class="meth-cmt">// x86-64 code generation</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/buf"</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/asm"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">Emitter</span> {
+    code: <span class="meth-type">^buf::Buffer</span>,
+    data: <span class="meth-type">^buf::Buffer</span>,
+    stack_off: <span class="meth-type">i32</span>,
+    label_id: <span class="meth-type">i32</span>,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit_prologue</span>(e: <span class="meth-type">^Emitter</span>) {
+    asm::push(e.code, asm::RBP)
+    asm::mov(e.code, asm::RBP, asm::RSP)
+    e.stack_off = <span class="meth-num">0</span>
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit_epilogue</span>(e: <span class="meth-type">^Emitter</span>) {
+    asm::mov(e.code, asm::RSP, asm::RBP)
+    asm::pop(e.code, asm::RBP)
+    asm::ret(e.code)
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit_call</span>(e: <span class="meth-type">^Emitter</span>, addr: <span class="meth-type">u64</span>) {
+    asm::mov_imm(e.code, asm::RAX, addr)
+    asm::call_reg(e.code, asm::RAX)
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit_binary</span>(e: <span class="meth-type">^Emitter</span>, op: <span class="meth-type">BinOp</span>,
+               dst: <span class="meth-type">Reg</span>, src: <span class="meth-type">Reg</span>) {
+    <span class="meth-kw">match</span> op {
+        BinOp::Add => asm::add(e.code, dst, src),
+        BinOp::Sub => asm::sub(e.code, dst, src),
+        BinOp::Mul => asm::imul(e.code, dst, src),
+        BinOp::Div => {
+            asm::mov(e.code, asm::RAX, dst)
+            asm::cqo(e.code)
+            asm::idiv(e.code, src)
+            asm::mov(e.code, dst, asm::RAX)
+        }
+    }
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">new_label</span>(e: <span class="meth-type">^Emitter</span>) -> <span class="meth-type">i32</span> {
+    e.label_id = e.label_id + <span class="meth-num">1</span>
+    <span class="meth-kw">return</span> e.label_id
+}</pre>
+<pre class="meth-code"><span class="meth-cmt">// x86-64 code generation</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/buf"</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/asm"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">Emitter</span> {
+    code: <span class="meth-type">^buf::Buffer</span>,
+    data: <span class="meth-type">^buf::Buffer</span>,
+    stack_off: <span class="meth-type">i32</span>,
+    label_id: <span class="meth-type">i32</span>,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit_prologue</span>(e: <span class="meth-type">^Emitter</span>) {
+    asm::push(e.code, asm::RBP)
+    asm::mov(e.code, asm::RBP, asm::RSP)
+    e.stack_off = <span class="meth-num">0</span>
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit_epilogue</span>(e: <span class="meth-type">^Emitter</span>) {
+    asm::mov(e.code, asm::RSP, asm::RBP)
+    asm::pop(e.code, asm::RBP)
+    asm::ret(e.code)
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">emit_call</span>(e: <span class="meth-type">^Emitter</span>, addr: <span class="meth-type">u64</span>) {
+    asm::mov_imm(e.code, asm::RAX, addr)
+    asm::call_reg(e.code, asm::RAX)
+}</pre>
+              </div>
+
+              <!-- Column 3: Parser (scrolls up, fast) -->
+              <div class="meth-col meth-col--3">
+<pre class="meth-code"><span class="meth-kw">import</span> <span class="meth-str">"std/io"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">Parser</span> {
+    tokens: <span class="meth-type">^Token</span>,
+    current: <span class="meth-type">i32</span>,
+    count: <span class="meth-type">i32</span>,
+    had_error: <span class="meth-type">bool</span>,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">parse_fn</span>(p: <span class="meth-type">^Parser</span>) -> <span class="meth-type">^ASTNode</span> {
+    expect(p, TK_FN)
+    <span class="meth-kw">let</span> name = expect(p, TK_IDENT)
+    expect(p, TK_LPAREN)
+    <span class="meth-kw">let</span> params = parse_params(p)
+    expect(p, TK_RPAREN)
+
+    <span class="meth-kw">let</span> ret_type: <span class="meth-type">^Type</span> = <span class="meth-num">null</span>
+    <span class="meth-kw">if</span> match(p, TK_ARROW) {
+        ret_type = parse_type(p)
+    }
+
+    <span class="meth-kw">let</span> body = parse_block(p)
+    <span class="meth-kw">return</span> ast::fn_decl(name, params, ret_type, body)
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">parse_block</span>(p: <span class="meth-type">^Parser</span>) -> <span class="meth-type">^ASTNode</span> {
+    expect(p, TK_LBRACE)
+    <span class="meth-kw">let</span> stmts = vec::new(<span class="meth-type">^ASTNode</span>)
+
+    <span class="meth-kw">while</span> !check(p, TK_RBRACE) <span class="meth-kw">and</span> !is_at_end(p) {
+        vec::push(stmts, parse_stmt(p))
+    }
+    expect(p, TK_RBRACE)
+    <span class="meth-kw">return</span> ast::block(stmts)
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">parse_if</span>(p: <span class="meth-type">^Parser</span>) -> <span class="meth-type">^ASTNode</span> {
+    expect(p, TK_IF)
+    <span class="meth-kw">let</span> cond = parse_expr(p)
+    <span class="meth-kw">let</span> then = parse_block(p)
+    <span class="meth-kw">let</span> else_b: <span class="meth-type">^ASTNode</span> = <span class="meth-num">null</span>
+    <span class="meth-kw">if</span> match(p, TK_ELSE) {
+        else_b = parse_block(p)
+    }
+    <span class="meth-kw">return</span> ast::if_stmt(cond, then, else_b)
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">expect</span>(p: <span class="meth-type">^Parser</span>, kind: <span class="meth-type">TokenKind</span>) -> <span class="meth-type">Token</span> {
+    <span class="meth-kw">if</span> !check(p, kind) {
+        error(p, <span class="meth-str">"unexpected token"</span>)
+    }
+    <span class="meth-kw">return</span> advance(p)
+}</pre>
+<pre class="meth-code"><span class="meth-kw">import</span> <span class="meth-str">"std/io"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">Parser</span> {
+    tokens: <span class="meth-type">^Token</span>,
+    current: <span class="meth-type">i32</span>,
+    count: <span class="meth-type">i32</span>,
+    had_error: <span class="meth-type">bool</span>,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">parse_fn</span>(p: <span class="meth-type">^Parser</span>) -> <span class="meth-type">^ASTNode</span> {
+    expect(p, TK_FN)
+    <span class="meth-kw">let</span> name = expect(p, TK_IDENT)
+    expect(p, TK_LPAREN)
+    <span class="meth-kw">let</span> params = parse_params(p)
+    expect(p, TK_RPAREN)
+
+    <span class="meth-kw">let</span> ret_type: <span class="meth-type">^Type</span> = <span class="meth-num">null</span>
+    <span class="meth-kw">if</span> match(p, TK_ARROW) {
+        ret_type = parse_type(p)
+    }
+
+    <span class="meth-kw">let</span> body = parse_block(p)
+    <span class="meth-kw">return</span> ast::fn_decl(name, params, ret_type, body)
+}</pre>
+              </div>
+
+              <!-- Column 4: PE Linker (scrolls down, slow) -->
+              <div class="meth-col meth-col--4">
+<pre class="meth-code"><span class="meth-cmt">// PE executable linker</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/mem"</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/fs"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">PEHeader</span> {
+    magic: <span class="meth-type">u16</span>,
+    sections: <span class="meth-type">u16</span>,
+    timestamp: <span class="meth-type">u32</span>,
+    entry_point: <span class="meth-type">u32</span>,
+    image_base: <span class="meth-type">u64</span>,
+    section_align: <span class="meth-type">u32</span>,
+    file_align: <span class="meth-type">u32</span>,
+}
+
+<span class="meth-kw">struct</span> <span class="meth-type">Section</span> {
+    name: <span class="meth-type">[char; 8]</span>,
+    vsize: <span class="meth-type">u32</span>,
+    vaddr: <span class="meth-type">u32</span>,
+    raw_size: <span class="meth-type">u32</span>,
+    raw_ptr: <span class="meth-type">u32</span>,
+    flags: <span class="meth-type">u32</span>,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">link</span>(code: <span class="meth-type">^buf::Buffer</span>,
+        data: <span class="meth-type">^buf::Buffer</span>,
+        out: <span class="meth-type">^char</span>) -> <span class="meth-type">bool</span> {
+    <span class="meth-kw">let</span> pe = build_header(code, data)
+    <span class="meth-kw">let</span> text = make_section(
+        <span class="meth-str">".text"</span>, code,
+        <span class="meth-num">0x60000020</span>
+    )
+    <span class="meth-kw">let</span> rdata = make_section(
+        <span class="meth-str">".rdata"</span>, data,
+        <span class="meth-num">0x40000040</span>
+    )
+    <span class="meth-kw">defer</span> mem::free(pe)
+    <span class="meth-kw">return</span> fs::write(out, pe)
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">align</span>(val: <span class="meth-type">u32</span>, a: <span class="meth-type">u32</span>) -> <span class="meth-type">u32</span> {
+    <span class="meth-kw">return</span> (val + a - <span class="meth-num">1</span>) & ~(a - <span class="meth-num">1</span>)
+}</pre>
+<pre class="meth-code"><span class="meth-cmt">// PE executable linker</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/mem"</span>
+<span class="meth-kw">import</span> <span class="meth-str">"std/fs"</span>
+
+<span class="meth-kw">struct</span> <span class="meth-type">PEHeader</span> {
+    magic: <span class="meth-type">u16</span>,
+    sections: <span class="meth-type">u16</span>,
+    timestamp: <span class="meth-type">u32</span>,
+    entry_point: <span class="meth-type">u32</span>,
+    image_base: <span class="meth-type">u64</span>,
+    section_align: <span class="meth-type">u32</span>,
+    file_align: <span class="meth-type">u32</span>,
+}
+
+<span class="meth-kw">struct</span> <span class="meth-type">Section</span> {
+    name: <span class="meth-type">[char; 8]</span>,
+    vsize: <span class="meth-type">u32</span>,
+    vaddr: <span class="meth-type">u32</span>,
+    raw_size: <span class="meth-type">u32</span>,
+    raw_ptr: <span class="meth-type">u32</span>,
+    flags: <span class="meth-type">u32</span>,
+}
+
+<span class="meth-kw">fn</span> <span class="meth-fn">link</span>(code: <span class="meth-type">^buf::Buffer</span>,
+        data: <span class="meth-type">^buf::Buffer</span>,
+        out: <span class="meth-type">^char</span>) -> <span class="meth-type">bool</span> {
+    <span class="meth-kw">let</span> pe = build_header(code, data)
+    <span class="meth-kw">let</span> text = make_section(
+        <span class="meth-str">".text"</span>, code,
+        <span class="meth-num">0x60000020</span>
+    )
+    <span class="meth-kw">defer</span> mem::free(pe)
+    <span class="meth-kw">return</span> fs::write(out, pe)
+}</pre>
+              </div>
+
+              <div class="panel-methlang__bg-overlay"></div>
+            </div>
             <div class="panel__inner panel__inner--center">
               <span class="panel__label">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
@@ -270,6 +773,45 @@
                   View on GitHub
                   <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
                 </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel: About -->
+          <div class="hscroll__panel panel-about" id="about">
+            <div class="panel__glow" aria-hidden="true"></div>
+            <div class="panel__inner">
+              <div class="panel__text">
+                <span class="panel__label">Who I am</span>
+                <h2 class="panel__heading">Beyond the code.</h2>
+                <p class="panel__body">
+                  I'm from South Africa, and when I'm not writing code I'm in the
+                  arena. I ride with <strong>SAWMGA</strong> (South African Western
+                  Mounted Games Association), competing in the full gymkhana
+                  slate&mdash;barrel racing, pole bending, keyhole, flag race, and
+                  everything in between.
+                </p>
+                <p class="panel__body">
+                  My horse is <strong>Wallace</strong>, a Boerperd&ndash;Clydesdale
+                  mix. Same energy I bring to building software&mdash;show up, push
+                  hard, get it done.
+                </p>
+              </div>
+              <div class="panel__media">
+                <div class="about-video-wrap">
+                  <div class="about-video-vignette" aria-hidden="true"></div>
+                  <video
+                    class="about-video"
+                    src="assets/vid01-comp.mp4"
+                    poster="assets/horseriding1.jpeg"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Marquis riding Wallace at a SAWMGA gymkhana event"
+                  ></video>
+                </div>
+                <p class="about-video-caption">Wallace &mdash; Boerperd&ndash;Clydesdale mix</p>
               </div>
             </div>
           </div>

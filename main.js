@@ -93,7 +93,7 @@
           0.22 + (Math.sin(now * 0.001 * star.twinkle + star.phase) + 1) * 0.16;
         var alpha = prefersReducedMotion ? 0.2 : twinkle;
         ctx.beginPath();
-        ctx.fillStyle = "rgba(122, 255, 190, " + alpha.toFixed(3) + ")";
+        ctx.fillStyle = "rgba(201, 162, 39, " + alpha.toFixed(3) + ")";
         ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
         ctx.fill();
       }
@@ -250,77 +250,119 @@
 
     var topWords = splitTextIntoWords(titleTop);
     var bottomWords = splitTextIntoWords(titleBottom);
+    var proofItems = document.querySelectorAll(".hero__proof-item");
+    var storyCard = document.querySelector(".hero__card--story");
+    var storyItems = Array.prototype.slice.call(
+      document.querySelectorAll(".hero__story-item")
+    );
+    var storyMetrics = Array.prototype.slice.call(
+      document.querySelectorAll(".hero__story-metric")
+    );
 
     /* Hide everything initially */
     gsap.set(
       [
+        ".hero__eyebrow",
         ".hero__subtitle",
         ".hero__actions",
-        ".hero__stats",
         ".hero__scroll-hint",
       ],
-      { opacity: 0, y: 40 }
+      { opacity: 0, y: 28 }
     );
-    gsap.set(".hero__stat-num", { opacity: 0, y: 20, scale: 0.9 });
+    gsap.set(proofItems, { opacity: 0, y: 20, scale: 0.97 });
+    gsap.set(storyCard, { opacity: 0, y: 34, x: 26 });
+    gsap.set(storyItems.concat(storyMetrics), { opacity: 0, y: 20 });
 
     var tl = gsap.timeline({
       defaults: { ease: "power4.out" },
-      delay: 0.3,
+      delay: 0.12,
     });
 
-    /* Title: staggered word reveal with slight rotation */
-    tl.from(topWords, {
-      y: "120%",
-      rotateX: 40,
-      duration: 1.4,
-      stagger: 0.07,
+    tl.to(".hero__eyebrow", {
+      opacity: 1,
+      y: 0,
+      duration: 0.45,
+      ease: "power2.out",
     })
+      /* Title: staggered word reveal with slight rotation */
+      .from(topWords, {
+        y: "118%",
+        rotateX: 28,
+        duration: 0.95,
+        stagger: 0.045,
+      }, 0.02)
       .from(
         bottomWords,
         {
-          y: "120%",
-          rotateX: 40,
-          duration: 1.4,
-          stagger: 0.07,
+          y: "118%",
+          rotateX: 28,
+          duration: 0.95,
+          stagger: 0.045,
         },
-        "-=1.0"
+        0.14
+      )
+      .to(
+        storyCard,
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 0.85,
+          ease: "power3.out",
+        },
+        0.18
       )
       /* Subtitle line fades up */
       .to(
         ".hero__subtitle",
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
-        "-=0.6"
+        { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" },
+        0.34
       )
-      /* Buttons */
       .to(
-        ".hero__actions",
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-        "-=0.5"
-      )
-      /* Stats container */
-      .to(
-        ".hero__stats",
-        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-        "-=0.4"
-      )
-      /* Stat numbers pop in individually */
-      .to(
-        ".hero__stat-num",
+        proofItems,
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "back.out(1.5)",
+          duration: 0.42,
+          stagger: 0.06,
+          ease: "power2.out",
         },
-        "-=0.3"
+        0.42
+      )
+      /* Buttons */
+      .to(
+        ".hero__actions",
+        { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" },
+        0.52
+      )
+      .to(
+        storyItems,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.45,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+        0.56
+      )
+      .to(
+        storyMetrics,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.42,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+        0.84
       )
       /* Scroll hint */
       .to(
         ".hero__scroll-hint",
-        { opacity: 1, y: 0, duration: 0.6 },
-        "-=0.2"
+        { opacity: 1, y: 0, duration: 0.4 },
+        0.88
       );
   }
 
@@ -333,6 +375,17 @@
     gsap.to(".hero__inner", {
       y: -120,
       opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    gsap.to(".hero__showcase", {
+      y: -48,
       ease: "none",
       scrollTrigger: {
         trigger: ".hero",
@@ -478,7 +531,7 @@
 
     document.querySelectorAll(".hscroll__panel").forEach(function (panel) {
       var els = panel.querySelectorAll(
-        ".panel__label, .panel__body, .panel-empire__stats, .panel-empire__tech, .panel-empire__links"
+        ".panel__label, .panel__body, .panel-empire__gallery, .panel-empire__stats, .panel-empire__tech, .panel-empire__links, .rit-features, .rit-compare, .rit-cta"
       );
       if (!els.length) return;
 
@@ -524,6 +577,7 @@
     var icons = [];
     var textBlocks = [];
     var tags = [];
+    var listItems = Array.prototype.slice.call(panel.querySelectorAll(".work-card__list li"));
 
     cards.forEach(function (card) {
       var icon = card.querySelector(".work-card__icon");
@@ -547,27 +601,29 @@
       force3D: true,
     });
 
+    var triggerConfig = isMobile || !hScrollTween
+      ? {
+          trigger: panel,
+          start: "top 82%",
+          end: "top 38%",
+          scrub: 0.85,
+          invalidateOnRefresh: true,
+        }
+      : {
+          trigger: panel,
+          containerAnimation: hScrollTween,
+          start: "left 92%",
+          end: "left 38%",
+          scrub: 0.85,
+          invalidateOnRefresh: true,
+        };
+
     var tl = gsap.timeline({
       defaults: {
         ease: "power2.out",
         duration: 1,
       },
-      scrollTrigger: isMobile || !hScrollTween
-        ? {
-            trigger: panel,
-            start: "top 82%",
-            end: "top 38%",
-            scrub: 0.85,
-            invalidateOnRefresh: true,
-          }
-        : {
-            trigger: panel,
-            containerAnimation: hScrollTween,
-            start: "left 92%",
-            end: "left 38%",
-            scrub: 0.85,
-            invalidateOnRefresh: true,
-          },
+      scrollTrigger: triggerConfig,
     });
 
     tl.fromTo(
@@ -629,21 +685,59 @@
         stagger: 0.12,
       },
       0.3
+    ).fromTo(
+      listItems,
+      { autoAlpha: 0, x: -10 },
+      {
+        autoAlpha: 1,
+        x: 0,
+        duration: 0.5,
+        stagger: 0.04,
+        ease: "power2.out",
+      },
+      0.4
     );
   }
 
   initWorkCards();
 
-  /* ─── About image: cinematic clip-path wipe + parallax ─── */
-  function initAboutImage() {
+  /* ─── About video: cinematic clip-path wipe + parallax + autoplay ─── */
+  function initAboutVideo() {
+    var videoWrap = document.querySelector(".about-video-wrap");
+    var video = document.querySelector(".about-video");
+    if (!videoWrap || !video) return;
+
+    /* Scroll-triggered play/pause: play when visible, pause when not */
+    var playTriggerConfig;
+    if (isMobile || !hScrollTween) {
+      playTriggerConfig = {
+        trigger: videoWrap,
+        start: "top 90%",
+        end: "bottom 10%",
+        onEnter: function () { video.play(); },
+        onLeave: function () { video.pause(); },
+        onEnterBack: function () { video.play(); },
+        onLeaveBack: function () { video.pause(); },
+      };
+    } else {
+      playTriggerConfig = {
+        trigger: ".panel-about",
+        containerAnimation: hScrollTween,
+        start: "left 90%",
+        end: "right 10%",
+        onEnter: function () { video.play(); },
+        onLeave: function () { video.pause(); },
+        onEnterBack: function () { video.play(); },
+        onLeaveBack: function () { video.pause(); },
+      };
+    }
+    ScrollTrigger.create(playTriggerConfig);
+
     if (prefersReducedMotion) return;
 
-    var imgWrap = document.querySelector(".about-img-wrap");
-    var img = document.querySelector(".about-img");
-    if (!imgWrap || !img) return;
-
-    gsap.set(img, { scale: 1.2, yPercent: 0 });
-    gsap.set(imgWrap, {
+    /* Cinematic clip-path reveal + parallax */
+    gsap.set(video, { scale: 1.2, yPercent: 0 });
+    gsap.set(videoWrap, {
       clipPath: "inset(10% 100% 10% 0)",
       autoAlpha: 0.35,
       xPercent: 8,
@@ -653,12 +747,12 @@
     var parallaxTriggerConfig;
     if (isMobile || !hScrollTween) {
       revealTriggerConfig = {
-        trigger: imgWrap,
+        trigger: videoWrap,
         start: "top 78%",
         toggleActions: "play reverse play reverse",
       };
       parallaxTriggerConfig = {
-        trigger: imgWrap,
+        trigger: videoWrap,
         start: "top 82%",
         end: "bottom 20%",
         scrub: 1,
@@ -682,14 +776,14 @@
     gsap.timeline({
       defaults: { duration: 1, ease: "power3.out" },
       scrollTrigger: revealTriggerConfig,
-    }).to(imgWrap, {
+    }).to(videoWrap, {
       clipPath: "inset(0% 0% 0% 0%)",
       autoAlpha: 1,
       xPercent: 0,
     });
 
     /* Parallax zoom-out */
-    gsap.to(img, {
+    gsap.to(video, {
       scale: 1.02,
       y: "-10%",
       ease: "none",
@@ -697,9 +791,13 @@
     });
   }
 
-  initAboutImage();
+  initAboutVideo();
 
-  /* ─── Empire background: slow parallax drift ─── */
+  /* ─── Empire background: subtle zoom only (no horizontal translate) ───
+     Horizontal x-parallax on a full-bleed object-fit image shifts the bitmap
+     inside overflow:hidden and exposes empty panel at one edge — a visible
+     strip when scrolling between Empire and Methlang. Scale-only keeps
+     full coverage. */
   function initEmpireParallax() {
     if (prefersReducedMotion || isMobile || !hScrollTween) return;
 
@@ -708,10 +806,9 @@
 
     gsap.fromTo(
       bgImg,
-      { scale: 1.2, x: "8%" },
+      { scale: 1.1 },
       {
-        scale: 1.05,
-        x: "-8%",
+        scale: 1.02,
         ease: "none",
         scrollTrigger: {
           trigger: ".panel-empire",
@@ -929,7 +1026,7 @@
 
     /* Horizontal panels */
     if (hScrollTween && !isMobile) {
-      var panelIds = ["about", "work", "projects"];
+      var panelIds = ["work", "projects", "rit", "methlang", "about"];
       document.querySelectorAll(".hscroll__panel").forEach(function (panel, i) {
         var id = panel.id || panelIds[i] || "";
         if (!id) return;
