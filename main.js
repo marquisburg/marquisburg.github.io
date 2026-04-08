@@ -489,6 +489,66 @@
 
   hScrollTween = initHorizontalScroll();
 
+  /* ─── Idle snap: finish horizontal section alignment after scroll stops ───
+     If the user pauses mid-panel, nudge vertical scroll to the nearest snap
+     so one panel fills the viewport instead of straddling two. */
+  function initHorizontalIdleSnap() {
+    if (isMobile || prefersReducedMotion || !hScrollTween || !lenis) return;
+
+    var st = hScrollTween.scrollTrigger;
+    if (!st) return;
+
+    var panels = document.querySelectorAll(".hscroll__panel");
+    if (panels.length < 2) return;
+
+    var idleMs = 550;
+    var snapEpsilon = 10;
+    var idleTimer = null;
+    var isSnapping = false;
+
+    function trySnapHorizontalPanel() {
+      if (isSnapping) return;
+
+      var y = lenis.scroll;
+      if (y < st.start || y > st.end) return;
+
+      var range = st.end - st.start;
+      if (range <= 0) return;
+
+      var n = panels.length;
+      var p = (y - st.start) / range;
+      p = Math.max(0, Math.min(1, p));
+
+      var idx = Math.round(p * (n - 1));
+      idx = Math.max(0, Math.min(n - 1, idx));
+      var snapP = idx / (n - 1);
+      var snapY = st.start + snapP * range;
+
+      if (Math.abs(snapY - y) < snapEpsilon) return;
+
+      isSnapping = true;
+      var snapDuration = 0.78;
+      lenis.scrollTo(snapY, {
+        duration: snapDuration,
+        easing: function (t) {
+          return 1 - Math.pow(1 - t, 4);
+        },
+      });
+      window.setTimeout(function () {
+        isSnapping = false;
+      }, snapDuration * 1000 + 100);
+    }
+
+    function scheduleIdleSnap() {
+      if (isSnapping) return;
+      window.clearTimeout(idleTimer);
+      idleTimer = window.setTimeout(trySnapHorizontalPanel, idleMs);
+    }
+
+    lenis.on("scroll", scheduleIdleSnap);
+  }
+
+  initHorizontalIdleSnap();
 
   /* ─── Panel heading animations (character-level for --xl, word-level for others) ─── */
   function initPanelHeadings() {
@@ -547,7 +607,7 @@
 
     document.querySelectorAll(".hscroll__panel").forEach(function (panel) {
       var els = panel.querySelectorAll(
-        ".panel__label, .panel__body, .panel-empire__gallery, .panel-empire__stats, .panel-empire__tech, .panel-empire__links, .rit-features, .rit-compare, .rit-cta"
+        ".panel__label, .panel__body, .panel-empire__content, .panel-empire__media, .panel-empire__stats, .panel-empire__tech, .panel-empire__links, .rit-capabilities, .rit-distinction, .rit-cta"
       );
       if (!els.length) return;
 
@@ -844,6 +904,76 @@
 
   initEmpireParallax();
 
+  /* ─── Empire video: autoplay muted, unmute when panel is in view ─── */
+  function initEmpireVideo() {
+    if (!hScrollTween) return;
+
+    var empirePanel = document.querySelector(".panel-empire");
+    var holder = document.getElementById("empire-yt");
+    if (!empirePanel || !holder) return;
+
+    var player = null;
+    var isInView = false;
+
+    function createPlayer() {
+      player = new YT.Player("empire-yt", {
+        videoId: "7rKERLjLk-E",
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 0,
+          modestbranding: 1,
+          rel: 0,
+          showinfo: 0,
+          iv_load_policy: 3,
+          disablekb: 1,
+          loop: 1,
+          playlist: "7rKERLjLk-E",
+          playsinline: 1,
+        },
+        events: {
+          onReady: function (e) {
+            e.target.setVolume(40);
+            if (isInView) e.target.unMute();
+          },
+        },
+      });
+    }
+
+    if (typeof YT !== "undefined" && typeof YT.Player === "function") {
+      createPlayer();
+    } else {
+      var prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () {
+        if (prev) prev();
+        createPlayer();
+      };
+    }
+
+    function tryUnmute() {
+      isInView = true;
+      if (player && typeof player.unMute === "function") player.unMute();
+    }
+
+    function tryMute() {
+      isInView = false;
+      if (player && typeof player.mute === "function") player.mute();
+    }
+
+    ScrollTrigger.create({
+      trigger: empirePanel,
+      containerAnimation: hScrollTween,
+      start: "left 60%",
+      end: "right 40%",
+      onEnter: tryUnmute,
+      onLeave: tryMute,
+      onEnterBack: tryUnmute,
+      onLeaveBack: tryMute,
+    });
+  }
+
+  initEmpireVideo();
+
   /* ─── Empire stats: counter animation ─── */
   function initStatCounters() {
     if (prefersReducedMotion) return;
@@ -1021,9 +1151,11 @@
   initContactReveal();
 
 
-  /* ─── Active nav highlighting ─── */
+  /* ─── Active nav highlighting + header theme ─── */
   function initNavHighlight() {
     var navLinks = document.querySelectorAll(".site-nav a");
+    var headerEl = document.getElementById("site-header");
+    var darkPanels = ["projects"];
 
     function setActive(id) {
       navLinks.forEach(function (link) {
@@ -1034,6 +1166,14 @@
           link.classList.remove("is-active");
         }
       });
+
+      if (headerEl) {
+        if (darkPanels.indexOf(id) !== -1) {
+          headerEl.classList.add("site-header--dark");
+        } else {
+          headerEl.classList.remove("site-header--dark");
+        }
+      }
     }
 
     /* Hero */

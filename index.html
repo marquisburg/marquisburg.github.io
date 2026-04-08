@@ -142,93 +142,71 @@
           <div class="hscroll__panel panel-work" id="work">
             <div class="panel__glow" aria-hidden="true"></div>
 
-
-            <div class="panel__inner panel__inner--full work-layout">
-              <div class="work-header">
-                <span class="panel__label">What I do</span>
-                <h2 class="panel__heading">I cover the systems that make a live Roblox game hold together.</h2>
-                <p class="panel__body panel__body--lead">
-                  I like owning the full loop: the systems players feel first,
-                  the multiplayer rules underneath them, and the backend and
-                  tools that keep the whole thing running.
+            <div class="work-spread">
+              <div class="work-left">
+                <span class="work-label">What I do</span>
+                <h2 class="work-heading">Gameplay, multiplayer, and backend for a live Roblox title.</h2>
+                <p class="work-sub">
+                  Luau on client and server, Python and C for services,
+                  PostgreSQL and Discord for data and ops.
                 </p>
-              </div>
-
-              <div class="work-stage">
-                <article class="work-orbit">
-                  <span class="work-orbit__eyebrow">Coverage</span>
-                  <h3 class="work-orbit__title">Systems I own day to day.</h3>
-                  <p class="work-orbit__copy">
-                    I do my best work when the boundaries disappear and the whole
-                    thing becomes one design problem.
-                  </p>
-                  <div class="work-orbit__cloud" aria-label="System coverage">
-                    <span class="work-orbit__pill work-orbit__pill--core">Combat AI</span>
-                    <span class="work-orbit__pill">Economy</span>
-                    <span class="work-orbit__pill">Backend</span>
-                    <span class="work-orbit__pill">Databases</span>
-                    <span class="work-orbit__pill">Tooling</span>
-                    <span class="work-orbit__pill">Anti-exploit</span>
-                  </div>
-                </article>
-
-                <div class="work-grid">
-                  <article class="work-card work-card--combat">
-                    <div class="work-card__accent" aria-hidden="true"></div>
-                    <span class="work-card__kicker">Combat systems</span>
-                    <h3 class="work-card__title">Fights that read well</h3>
-                    <ul class="work-card__list">
-                      <li>NPC behavior and target selection</li>
-                      <li>Pressure, reaction, and pacing</li>
-                      <li>Server-side combat rules</li>
-                    </ul>
-                  </article>
-
-                  <article class="work-card work-card--economy">
-                    <div class="work-card__accent" aria-hidden="true"></div>
-                    <span class="work-card__kicker">Economy systems</span>
-                    <h3 class="work-card__title">Value has to hold up</h3>
-                    <ul class="work-card__list">
-                      <li>Trading and auction house flow</li>
-                      <li>Item movement, sinks, and progression</li>
-                      <li>Rules that survive real players</li>
-                    </ul>
-                  </article>
-
-                  <article class="work-card work-card--network">
-                    <div class="work-card__accent" aria-hidden="true"></div>
-                    <span class="work-card__kicker">Multiplayer systems</span>
-                    <h3 class="work-card__title">Authority stays server-side</h3>
-                    <ul class="work-card__list">
-                      <li>Replication and state ownership</li>
-                      <li>Validation and anti-exploit checks</li>
-                      <li>Game rules that stay fair under load</li>
-                    </ul>
-                  </article>
-
-                  <article class="work-card work-card--backend">
-                    <div class="work-card__accent" aria-hidden="true"></div>
-                    <span class="work-card__kicker">Backend and tools</span>
-                    <h3 class="work-card__title">The layer nobody sees</h3>
-                    <ul class="work-card__list">
-                      <li>APIs, SQL, and Discord workflows</li>
-                      <li>Admin tools and live ops support</li>
-                      <li>Automation that keeps shipping fast</li>
-                    </ul>
-                  </article>
+                <div class="work-stack" aria-label="Core stack">
+                  <span>Luau</span>
+                  <span>Python</span>
+                  <span>C</span>
+                  <span>SQL</span>
+                  <span>PostgreSQL</span>
+                  <span>REST</span>
+                  <span>Discord.py</span>
+                  <span>Roblox networking</span>
+                  <span>Server validation</span>
                 </div>
               </div>
 
-              <div class="work-ribbon" aria-label="Core stack">
-                <span>Luau</span>
-                <span>Python</span>
-                <span>C</span>
-                <span>SQL</span>
-                <span>PostgreSQL</span>
-                <span>REST</span>
-                <span>Discord.py</span>
-                <span>Roblox networking</span>
-                <span>Server validation</span>
+              <div class="work-right">
+                <article class="work-card work-card--combat">
+                  <span class="work-card__num">01</span>
+                  <span class="work-card__kicker">Combat systems</span>
+                  <h3 class="work-card__title">NPC fights and server authority</h3>
+                  <ul class="work-card__list">
+                    <li>AI behavior, aggro, and attack patterns</li>
+                    <li>Server-side logic</li>
+                    <li>Combat animations and timing</li>
+                  </ul>
+                </article>
+
+                <article class="work-card work-card--economy">
+                  <span class="work-card__num">02</span>
+                  <span class="work-card__kicker">Economy systems</span>
+                  <h3 class="work-card__title">Trading and progression</h3>
+                  <ul class="work-card__list">
+                    <li>Trading and auction house</li>
+                    <li>Item flow, sinks, progression</li>
+                    <li>Tuning against abuse and inflation</li>
+                  </ul>
+                </article>
+
+                <article class="work-card work-card--network">
+                  <span class="work-card__num">03</span>
+                  <span class="work-card__kicker">Multiplayer systems</span>
+                  <h3 class="work-card__title">Replication and validation</h3>
+                  <ul class="work-card__list">
+                    <li>Replication and who owns state</li>
+                    <li>Validation and anti-exploit</li>
+                    <li>Behavior under high player load</li>
+                  </ul>
+                </article>
+
+                <article class="work-card work-card--backend">
+                  <span class="work-card__num">04</span>
+                  <span class="work-card__kicker">Backend and tools</span>
+                  <h3 class="work-card__title">APIs, data, Discord</h3>
+                  <ul class="work-card__list">
+                    <li>REST, SQL, Discord integrations</li>
+                    <li>Admin tools and live ops</li>
+                    <li>Build and deploy automation</li>
+                  </ul>
+                </article>
               </div>
             </div>
           </div>
@@ -248,20 +226,64 @@
               />
               <div class="panel-empire__bg-overlay"></div>
             </div>
-            <div class="panel__inner panel__inner--center">
-              <div class="panel-empire__main">
+
+            <div class="panel-empire__layout">
+              <!-- Left: text content -->
+              <div class="panel-empire__content">
                 <span class="panel__label">
                   <span class="project__badge-dot"></span>
                   Live Project
                 </span>
-                <h2 class="panel__heading panel__heading--xl">Empire Roleplay</h2>
-                <p class="panel__body panel__body--center">
+                <h2 class="panel-empire__title">Empire Roleplay</h2>
+                <p class="panel-empire__desc">
                   A live Roblox roleplay game where I lead development. I own the
                   backend architecture, database, API layer that connects SQL to the
                   game, and a Discord bot used by 28K members. I also built the
                   combat AI system, which I consider one of the most advanced on
-                  Roblox. I also developed, from the ground up, the entire economy system, including the trading and auction house.
+                  Roblox. I also developed, from the ground up, the entire economy
+                  system, including the trading and auction house.
                 </p>
+
+                <div class="panel-empire__stats">
+                  <div class="panel-empire__stat">
+                    <span class="panel-empire__stat-num">15.5M+</span>
+                    <span class="panel-empire__stat-label">Visits</span>
+                  </div>
+                  <div class="panel-empire__stat">
+                    <span class="panel-empire__stat-num">50-200</span>
+                    <span class="panel-empire__stat-label">Peak CCU</span>
+                  </div>
+                  <div class="panel-empire__stat">
+                    <span class="panel-empire__stat-num">28K</span>
+                    <span class="panel-empire__stat-label">Discord</span>
+                  </div>
+                </div>
+
+                <div class="panel-empire__tech">
+                  <span>Luau</span>
+                  <span>Python</span>
+                  <span>SQL</span>
+                  <span>REST API</span>
+                  <span>Discord.py</span>
+                </div>
+
+                <div class="panel-empire__links">
+                  <a class="btn btn--primary" href="https://www.roblox.com/games/4866011667/Empire-Roleplay" target="_blank" rel="noopener noreferrer">
+                    Play on Roblox
+                    <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                  <a class="btn btn--ghost" href="https://discord.gg/hre" target="_blank" rel="noopener noreferrer">
+                    Join Discord
+                    <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: media showcase -->
+              <div class="panel-empire__media">
+                <div class="panel-empire__video">
+                  <div id="empire-yt"></div>
+                </div>
                 <div class="panel-empire__gallery" aria-label="Empire Roleplay screenshots">
                   <figure class="panel-empire__shot">
                     <img
@@ -284,37 +306,6 @@
                     />
                   </figure>
                 </div>
-                <div class="panel-empire__stats">
-                  <div class="panel-empire__stat">
-                    <span class="panel-empire__stat-num">15.5M+</span>
-                    <span class="panel-empire__stat-label">Visits</span>
-                  </div>
-                  <div class="panel-empire__stat">
-                    <span class="panel-empire__stat-num">50-100</span>
-                    <span class="panel-empire__stat-label">Peak CCU</span>
-                  </div>
-                  <div class="panel-empire__stat">
-                    <span class="panel-empire__stat-num">28K</span>
-                    <span class="panel-empire__stat-label">Discord</span>
-                  </div>
-                </div>
-                <div class="panel-empire__tech">
-                  <span>Luau</span>
-                  <span>Python</span>
-                  <span>SQL</span>
-                  <span>REST API</span>
-                  <span>Discord.py</span>
-                </div>
-              </div>
-              <div class="panel-empire__links">
-                <a class="btn btn--primary" href="https://www.roblox.com/games/4866011667/Empire-Roleplay" target="_blank" rel="noopener noreferrer">
-                  Play on Roblox
-                  <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </a>
-                <a class="btn btn--ghost" href="https://discord.gg/hre" target="_blank" rel="noopener noreferrer">
-                  Join Discord
-                  <svg class="btn__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </a>
               </div>
             </div>
           </div>
@@ -330,68 +321,60 @@
                 </span>
                 <h2 class="panel__heading panel__heading--xl">RIT</h2>
                 <p class="panel__body panel__body--center">
-                  A Roblox development platform with version control, two-way sync,
-                  team analytics, and task tracking. It's built around Roblox assets
-                  and team workflows instead of forcing everything through generic
-                  software tools.
+                  The proprietary Roblox development platform used by teams I run.
+                  Version control, two-way sync, team analytics, and task tracking
+                  built around Roblox assets and team workflows instead of forcing
+                  everything through generic software tools.
                 </p>
 
-                <div class="rit-features">
-                  <div class="rit-feature">
-                    <div class="rit-feature__icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="1.05" y1="12" x2="7" y2="12"/><line x1="17.01" y1="12" x2="22.96" y2="12"/></svg>
+                <div class="rit-capabilities">
+                  <div class="rit-cap">
+                    <span class="rit-cap__num">01</span>
+                    <div class="rit-cap__text">
+                      <h3 class="rit-cap__title">Version Control</h3>
+                      <p>Commits, branches, history, and diffs that understand Roblox assets, not just plain code files.</p>
                     </div>
-                    <h3 class="rit-feature__title">Version Control</h3>
-                    <p class="rit-feature__desc">Commits, branches, history, and diffs that understand Roblox assets, not just plain code files.</p>
                   </div>
-                  <div class="rit-feature">
-                    <div class="rit-feature__icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                  <div class="rit-cap">
+                    <span class="rit-cap__num">02</span>
+                    <div class="rit-cap__text">
+                      <h3 class="rit-cap__title">Two-Way Sync</h3>
+                      <p>Local files and Roblox stay in sync. Handles publishing, asset versions, and conflicts without nuking work.</p>
                     </div>
-                    <h3 class="rit-feature__title">Two-Way Sync</h3>
-                    <p class="rit-feature__desc">Local files and Roblox stay in sync. Handles publishing, asset versions, and conflicts without nuking work.</p>
                   </div>
-                  <div class="rit-feature">
-                    <div class="rit-feature__icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  <div class="rit-cap">
+                    <span class="rit-cap__num">03</span>
+                    <div class="rit-cap__text">
+                      <h3 class="rit-cap__title">Project Intelligence</h3>
+                      <p>Team velocity, file churn, and work patterns so you can see what is actually changing.</p>
                     </div>
-                    <h3 class="rit-feature__title">Project Intelligence</h3>
-                    <p class="rit-feature__desc">Shows team velocity, file churn, and work patterns so you can see what is actually changing.</p>
                   </div>
-                  <div class="rit-feature">
-                    <div class="rit-feature__icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <div class="rit-cap">
+                    <span class="rit-cap__num">04</span>
+                    <div class="rit-cap__text">
+                      <h3 class="rit-cap__title">Team Awareness</h3>
+                      <p>See who is working, what they changed, and when. Live activity feed for the whole project.</p>
                     </div>
-                    <h3 class="rit-feature__title">Team Awareness</h3>
-                    <p class="rit-feature__desc">See who is working, what they changed, and when. Includes a live activity feed for the whole project.</p>
                   </div>
-                  <div class="rit-feature">
-                    <div class="rit-feature__icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <div class="rit-cap">
+                    <span class="rit-cap__num">05</span>
+                    <div class="rit-cap__text">
+                      <h3 class="rit-cap__title">Workflow Layer</h3>
+                      <p>Tasks tied directly to code changes, so the work does not drift into a separate board nobody updates.</p>
                     </div>
-                    <h3 class="rit-feature__title">Workflow Layer</h3>
-                    <p class="rit-feature__desc">Tasks tied directly to code changes, so the work does not drift into a separate board nobody updates.</p>
                   </div>
-                  <div class="rit-feature rit-feature--planned">
-                    <div class="rit-feature__icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><line x1="10" y1="18" x2="14" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+                  <div class="rit-cap">
+                    <span class="rit-cap__num">06</span>
+                    <div class="rit-cap__text">
+                      <h3 class="rit-cap__title">Issue Tracking</h3>
+                      <p>In-depth issue tracking with automated file-level issues tied directly to the assets and scripts that caused them.</p>
                     </div>
-                    <h3 class="rit-feature__title">AI Layer</h3>
-                    <p class="rit-feature__desc">Bug detection, affected file suggestions, and issues linked to code. <em>Planned.</em></p>
                   </div>
                 </div>
 
-                <div class="rit-compare">
-                  <div class="rit-compare__item rit-compare__item--other">
-                    <span class="rit-compare__label">Rojo</span>
-                    <p>Syncs code.</p>
-                  </div>
-                  <div class="rit-compare__divider">vs</div>
-                  <div class="rit-compare__item rit-compare__item--rit">
-                    <span class="rit-compare__label">RIT</span>
-                    <p>Tracks code, assets, and the work around them.</p>
-                  </div>
-                </div>
+                <p class="rit-distinction">
+                  Where Rojo syncs code, RIT tracks code, assets, and the work around them.
+                </p>
 
                 <div class="panel-empire__tech">
                   <span>Roblox</span>
@@ -864,6 +847,7 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="main.js"></script>
   </body>
 </html>
