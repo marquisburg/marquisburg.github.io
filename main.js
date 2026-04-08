@@ -164,31 +164,6 @@
 
   initHeroAmbientPointer();
 
-  function initMagneticButtons() {
-    if (prefersReducedMotion || !hasFinePointer) return;
-
-    var buttons = document.querySelectorAll(".btn");
-    buttons.forEach(function (button) {
-      button.addEventListener("pointermove", function (event) {
-        var rect = button.getBoundingClientRect();
-        var x = event.clientX - rect.left - rect.width / 2;
-        var y = event.clientY - rect.top - rect.height / 2;
-        var maxX = Math.max(-8, Math.min(8, x * 0.16));
-        var maxY = Math.max(-6, Math.min(6, y * 0.2));
-
-        button.style.setProperty("--btn-x", maxX.toFixed(2) + "px");
-        button.style.setProperty("--btn-y", maxY.toFixed(2) + "px");
-      });
-
-      button.addEventListener("pointerleave", function () {
-        button.style.setProperty("--btn-x", "0px");
-        button.style.setProperty("--btn-y", "0px");
-      });
-    });
-  }
-
-  initMagneticButtons();
-
   /* ─── Text splitter utility ─── */
   function splitTextIntoWords(element) {
     var text = element.textContent.trim();
@@ -253,13 +228,6 @@
     var bottomWords = splitTextIntoWords(titleBottom);
     var allWords = topWords.concat(bottomWords);
     var proofItems = document.querySelectorAll(".hero__proof-item");
-    var storyCard = document.querySelector(".hero__card--story");
-    var storyItems = Array.prototype.slice.call(
-      document.querySelectorAll(".hero__story-item")
-    );
-    var storyMetrics = Array.prototype.slice.call(
-      document.querySelectorAll(".hero__story-metric")
-    );
 
     /* Safety net: if animation doesn't complete within 3s, force everything visible.
        Covers bfcache, CDN lag, and any GSAP timing edge cases. */
@@ -270,8 +238,6 @@
         { opacity: 1, y: 0, clearProps: "all" }
       );
       gsap.set(proofItems, { opacity: 1, y: 0, scale: 1, clearProps: "all" });
-      if (storyCard) gsap.set(storyCard, { opacity: 1, y: 0, x: 0, clearProps: "all" });
-      gsap.set(storyItems.concat(storyMetrics), { opacity: 1, y: 0, clearProps: "all" });
     }, 3000);
 
     /* Hide everything initially */
@@ -285,8 +251,6 @@
       { opacity: 0, y: 28 }
     );
     gsap.set(proofItems, { opacity: 0, y: 20, scale: 0.97 });
-    gsap.set(storyCard, { opacity: 0, y: 34, x: 26 });
-    gsap.set(storyItems.concat(storyMetrics), { opacity: 0, y: 20 });
 
     var tl = gsap.timeline({
       defaults: { ease: "power4.out" },
@@ -317,17 +281,6 @@
         },
         0.14
       )
-      .to(
-        storyCard,
-        {
-          opacity: 1,
-          y: 0,
-          x: 0,
-          duration: 0.85,
-          ease: "power3.out",
-        },
-        0.18
-      )
       /* Subtitle line fades up */
       .to(
         ".hero__subtitle",
@@ -352,33 +305,11 @@
         { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" },
         0.52
       )
-      .to(
-        storyItems,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.45,
-          stagger: 0.08,
-          ease: "power2.out",
-        },
-        0.56
-      )
-      .to(
-        storyMetrics,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.42,
-          stagger: 0.08,
-          ease: "power2.out",
-        },
-        0.84
-      )
       /* Scroll hint */
       .to(
         ".hero__scroll-hint",
         { opacity: 1, y: 0, duration: 0.4 },
-        0.88
+        0.72
       );
   }
 
@@ -391,17 +322,6 @@
     gsap.to(".hero__inner", {
       y: -120,
       opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    gsap.to(".hero__showcase", {
-      y: -48,
       ease: "none",
       scrollTrigger: {
         trigger: ".hero",
@@ -1155,61 +1075,123 @@
   function initNavHighlight() {
     var navLinks = document.querySelectorAll(".site-nav a");
     var headerEl = document.getElementById("site-header");
-    var darkPanels = ["projects"];
+    var linkById = {};
+    var lastActiveId = "";
+    var rafId = null;
+
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (!href || href.charAt(0) !== "#") return;
+      linkById[href.substring(1)] = link;
+    });
+
+    function normalizeNavId(id) {
+      if (id === "hero") return "work";
+      return id;
+    }
 
     function setActive(id) {
-      navLinks.forEach(function (link) {
-        var href = link.getAttribute("href");
-        if (href === "#" + id) {
-          link.classList.add("is-active");
-        } else {
+      var navId = normalizeNavId(id);
+      if (navId && linkById[navId] && navId !== lastActiveId) {
+        lastActiveId = navId;
+        navLinks.forEach(function (link) {
           link.classList.remove("is-active");
-        }
-      });
+        });
+        linkById[navId].classList.add("is-active");
+      }
 
       if (headerEl) {
-        if (darkPanels.indexOf(id) !== -1) {
-          headerEl.classList.add("site-header--dark");
-        } else {
-          headerEl.classList.remove("site-header--dark");
-        }
+        headerEl.classList.toggle("site-header--dark", id === "projects");
       }
     }
 
-    /* Hero */
-    ScrollTrigger.create({
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      onEnter: function () { setActive("hero"); },
-      onEnterBack: function () { setActive("hero"); },
-    });
+    function getBestActiveSectionId() {
+      if (hScrollTriggerInstance && !isMobile) {
+        var y = lenis ? lenis.scroll : (window.pageYOffset || window.scrollY || 0);
+        var hsStart = hScrollTriggerInstance.start;
+        var hsEnd = hScrollTriggerInstance.end;
+        var hsRange = Math.max(hsEnd - hsStart, 1);
+        var horizontalIds = ["work", "projects", "rit", "methlang", "about"];
 
-    /* Horizontal panels */
-    if (hScrollTween && !isMobile) {
-      var panelIds = ["work", "projects", "rit", "methlang", "about"];
-      document.querySelectorAll(".hscroll__panel").forEach(function (panel, i) {
-        var id = panel.id || panelIds[i] || "";
-        if (!id) return;
+        if (y < hsStart) return "hero";
 
-        ScrollTrigger.create({
-          trigger: panel,
-          containerAnimation: hScrollTween,
-          start: "left 60%",
-          end: "right 40%",
-          onEnter: function () { setActive(id); },
-          onEnterBack: function () { setActive(id); },
+        if (y <= hsEnd) {
+          var p = (y - hsStart) / hsRange;
+          p = Math.max(0, Math.min(1, p));
+          var idx = Math.round(p * (horizontalIds.length - 1));
+          return horizontalIds[Math.max(0, Math.min(horizontalIds.length - 1, idx))];
+        }
+
+        var contactSection = document.getElementById("contact");
+        if (contactSection) {
+          var contactRect = contactSection.getBoundingClientRect();
+          if (contactRect.top <= window.innerHeight * 0.6) return "contact";
+        }
+
+        return "about";
+      }
+
+      var sectionIds = ["hero", "work", "projects", "rit", "methlang", "about", "contact"];
+      var viewportCenter = window.innerHeight * 0.5;
+      var bestId = "";
+      var bestScore = Number.POSITIVE_INFINITY;
+
+      sectionIds.forEach(function (id) {
+        var section = document.getElementById(id);
+        if (!section) return;
+
+        var rect = section.getBoundingClientRect();
+        var visibleTop = Math.max(rect.top, 0);
+        var visibleBottom = Math.min(rect.bottom, window.innerHeight);
+        var visiblePx = Math.max(0, visibleBottom - visibleTop);
+        if (visiblePx <= 0) return;
+
+        var sectionCenter = rect.top + rect.height / 2;
+        var centerDist = Math.abs(sectionCenter - viewportCenter);
+        var visibilityRatio = visiblePx / Math.max(rect.height, 1);
+        var score = centerDist - visibilityRatio * 140;
+
+        if (score < bestScore) {
+          bestScore = score;
+          bestId = id;
+        }
+      });
+
+      if (!bestId) {
+        /* Fallback near boundaries where visibility can briefly hit 0. */
+        sectionIds.forEach(function (id) {
+          var section = document.getElementById(id);
+          if (!section) return;
+          var rect = section.getBoundingClientRect();
+          var sectionCenter = rect.top + rect.height / 2;
+          var centerDist = Math.abs(sectionCenter - viewportCenter);
+          if (centerDist < bestScore) {
+            bestScore = centerDist;
+            bestId = id;
+          }
         });
+      }
+
+      return bestId;
+    }
+
+    function scheduleActiveUpdate() {
+      if (rafId !== null) return;
+      rafId = window.requestAnimationFrame(function () {
+        rafId = null;
+        setActive(getBestActiveSectionId());
       });
     }
 
-    /* Contact */
-    ScrollTrigger.create({
-      trigger: "#contact",
-      start: "top 60%",
-      onEnter: function () { setActive("contact"); },
-      onEnterBack: function () { setActive("contact"); },
-    });
+    if (lenis) {
+      lenis.on("scroll", scheduleActiveUpdate);
+    } else {
+      window.addEventListener("scroll", scheduleActiveUpdate, { passive: true });
+    }
+
+    window.addEventListener("resize", scheduleActiveUpdate, { passive: true });
+    ScrollTrigger.addEventListener("refresh", scheduleActiveUpdate);
+    scheduleActiveUpdate();
   }
 
   initNavHighlight();
