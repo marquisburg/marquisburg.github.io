@@ -454,6 +454,19 @@ main {
 
 .hero__title-bottom {
   display: block;
+  color: var(--c-accent);
+}
+
+/* Before JS splits: gradient on the element itself.
+   After JS splits: gradient moves to children so Chrome renders it. */
+.hero__title-bottom:not(:has(.split-word)) {
+  background: linear-gradient(135deg, var(--c-accent), var(--c-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__title-bottom .split-word {
   background: linear-gradient(135deg, var(--c-accent), var(--c-accent-2));
   -webkit-background-clip: text;
   background-clip: text;

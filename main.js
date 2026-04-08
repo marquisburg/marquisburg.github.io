@@ -224,6 +224,11 @@
     var titleBottom = document.querySelector(".hero__title-bottom");
     if (!titleTop || !titleBottom) return;
 
+    /* Lock the title height before splitting to prevent layout shift */
+    var heroTitle = document.querySelector(".hero__title");
+    var titleRect = heroTitle.getBoundingClientRect();
+    heroTitle.style.minHeight = titleRect.height + "px";
+
     var topWords = splitTextIntoWords(titleTop);
     var bottomWords = splitTextIntoWords(titleBottom);
     var allWords = topWords.concat(bottomWords);
@@ -238,6 +243,7 @@
         { opacity: 1, y: 0, clearProps: "all" }
       );
       gsap.set(proofItems, { opacity: 1, y: 0, scale: 1, clearProps: "all" });
+      heroTitle.style.minHeight = "";
     }, 3000);
 
     /* Hide everything initially */
@@ -255,7 +261,10 @@
     var tl = gsap.timeline({
       defaults: { ease: "power4.out" },
       delay: 0.12,
-      onComplete: function () { clearTimeout(safetyTimer); },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        heroTitle.style.minHeight = "";
+      },
     });
 
     tl.to(".hero__eyebrow", {
